@@ -31,3 +31,4 @@ MonoBehaviour:
     coinsReward: 90
   - levelPrefab: {fileID: 5948693752090662076, guid: d436b3635736cb7478d6956d48b139c3, type: 3}
     coinsReward: 100
+  carGiftCanvas: {fileID: 4789766005970589893, guid: 00005c09b7fdb8f41b6f691fe48c1a32, type: 3}

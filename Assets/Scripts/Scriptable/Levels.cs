@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName ="MySO/Levels")]
 public class Levels : ScriptableObject
 {
     public GameObject[] environments;
     public LevelDetails[] levelDetails;
+    public GameObject carGiftCanvas;
 
 }
 

@@ -7,7 +7,7 @@ public class DragScript : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float onRoadSpeed = 25f;
     [SerializeField] float rotationSpeed = 500f;
-    [SerializeField] float collisionForce = 50f;
+    [SerializeField] bool gift;
     bool isMoving;
     bool waypointFound;
     bool hasEnteredTrigger;
@@ -29,6 +29,8 @@ public class DragScript : MonoBehaviour
     {
         pathCreator = WaypointsHolder.instance.pathCreator;
         initialRotation = transform.rotation;
+        if(gift)
+            Instantiate(GameController.instance.levels.carGiftCanvas, gameObject.transform);
     }
 
     void UnfreezeGlobalDirection()
@@ -135,6 +137,12 @@ public class DragScript : MonoBehaviour
             transform.position = pathCreator.path.GetClosestPointOnPath(transform.position);
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
             waypointFound = true;
+            if (gift)
+            {
+                //BonusRewardManager.instance.UpdateBarProgress(0.1f);
+                PlayerPrefs.SetFloat("bar progress", PlayerPrefs.GetFloat("bar progress") + 0.1f);
+                Destroy(GetComponentInChildren<Canvas>().transform.gameObject);
+            }
         }
         if (other.gameObject.CompareTag("Destroy"))
             Destroy(gameObject, 2f);

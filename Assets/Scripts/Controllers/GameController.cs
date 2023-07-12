@@ -32,13 +32,18 @@ public class GameController : MonoBehaviour
             carsCount--;
             if (carsCount == 0)
             {
-                OnLevelComplete();
+                StartCoroutine(OnLevelComplete());
             }
         }
     }
 
-    void OnLevelComplete()
+    IEnumerator OnLevelComplete()
     {
+        SoundManager.i.PlaySound(Sounds.SoundType.fireworks);
+        UIController.instance.EnableCelebrateView();
+        yield return new WaitForSeconds(1.5f);
+
+        SoundManager.i.PlaySound(Sounds.SoundType.passLevel);
         UIController.instance.EnableResultView();
         UIController.instance.UpdateReward(levels.levelDetails[currLevel-1].coinsReward);
         CoinsRewardManager.instance.UpdateCoinsCount(levels.levelDetails[currLevel-1].coinsReward);

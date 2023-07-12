@@ -19,6 +19,7 @@ public class UIController : MonoBehaviour
     }
     ///////////////
     [SerializeField] GameObject resultView;
+    [SerializeField] GameObject celebrateView;
     [SerializeField] GameObject CarGiftView;
     [SerializeField] GameObject getPuzzleView;
     [SerializeField] GameObject getRewardView;
@@ -38,6 +39,11 @@ public class UIController : MonoBehaviour
     internal void EnableResultView()
     {
         resultView.SetActive(true);
+    }
+
+    internal void EnableCelebrateView()
+    {
+        celebrateView.SetActive(true);
     }
 
     internal void UpdateLevelInfo(int level)

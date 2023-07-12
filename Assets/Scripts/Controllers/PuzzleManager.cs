@@ -17,7 +17,7 @@ public class PuzzleManager : MonoBehaviour
     int currentPuzzle;
     int lastUnlockedPiece;
 
-    bool puzzleConpleted = false;
+    bool puzzleCompleted = false;
 
     private void Awake()
     {
@@ -31,11 +31,12 @@ public class PuzzleManager : MonoBehaviour
         GameObject _puzzle = Instantiate(rewards.puzzles[currentPuzzle], puzzlePos);
         puzzlePiecesParent = _puzzle.transform.Find("content");
         puzzlePieces = puzzlePiecesParent.GetComponentsInChildren<Transform>(true);
+        puzzleCompleted = false;
     }
 
     private void OnEnable()
     {
-        if(puzzleConpleted)
+        if(puzzleCompleted)
             InitializePuzzle();
         for (int i = 0; i < puzzlePieces.Length; i++)
         {
@@ -82,13 +83,13 @@ public class PuzzleManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("current puzzle", currentPuzzle+1);
             PlayerPrefs.DeleteKey("last puzzle piece");
-            puzzleConpleted = true;
+            puzzleCompleted = true;
         }
     }
 
     void AnimatePiece()
     {
-        puzzlePieces[lastUnlockedPiece].transform.position = Vector3.MoveTowards(puzzlePieces[lastUnlockedPiece].position, pieceFinalPos, 22f);
+        puzzlePieces[lastUnlockedPiece].transform.position = Vector3.MoveTowards(puzzlePieces[lastUnlockedPiece].position, pieceFinalPos, 0.5f);
         if (puzzlePieces[lastUnlockedPiece].transform.position != pieceFinalPos)
         {
             Invoke("AnimatePiece", 0.01f);

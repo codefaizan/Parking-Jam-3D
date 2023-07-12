@@ -97,6 +97,7 @@ public class DragScript : MonoBehaviour
                            moveDirection = new Vector3(0f, 0f, dotProduct);
                             rb.isKinematic = false;
                            isMoving = true;
+                            
                         } 
 
                     }
@@ -106,6 +107,7 @@ public class DragScript : MonoBehaviour
         else if (touch.phase == TouchPhase.Ended)
         {
             //isMoving = true;
+            //SoundManager.i.PlaySound(Sounds.SoundType.carMove);
         }
 
     }
@@ -119,6 +121,7 @@ public class DragScript : MonoBehaviour
                 distanceTravelled += moveSpeed * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Stop);
                 transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
+                //SoundManager.i.PlaySound(Sounds.SoundType.carMove);
             }
         }
         else
@@ -126,6 +129,7 @@ public class DragScript : MonoBehaviour
             //transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
             UnfreezeGlobalDirection();
             rb.velocity = transform.forward * moveDirection.z * moveSpeed;
+            
         }
     }
 
@@ -145,7 +149,11 @@ public class DragScript : MonoBehaviour
             }
         }
         if (other.gameObject.CompareTag("Destroy"))
+        {
             Destroy(gameObject, 2f);
+            SoundManager.i.PlaySound(Sounds.SoundType.carOut);
+            print("carout");
+        }
     }
 
     void RotateCarTowardsRoad()

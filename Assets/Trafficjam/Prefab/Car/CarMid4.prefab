@@ -62,8 +62,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6263874, y: 2, z: 5.9}
-  m_Center: {x: 0.023136497, y: 1, z: 0}
+  m_Size: {x: 2.4619663, y: 2, z: 5.9}
+  m_Center: {x: 0.02381742, y: 1, z: 1.0562321e-16}
 --- !u!114 &4445584738839264123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   moveSpeed: 15
   onRoadSpeed: 25
   rotationSpeed: 500
-  collisionForce: 80
+  gift: 0
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &3500146274987462056
 GameObject:

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e06fed2d1d429b45a50832a5a98cdea, type: 3}
+  m_Name: _Rewards Config
+  m_EditorClassIdentifier: 
+  puzzles:
+  - {fileID: 1958236023184552, guid: 52d8279fc5e342f42a0a579ca86582ff, type: 3}
+  - {fileID: 1230815823452498, guid: 718384083eeaa9b4d88966854206637e, type: 3}
+  - {fileID: 1078572429372291, guid: f2e9d4141c8ff3e45ac4fea9ce1f739b, type: 3}
+  carGiftCanvas: {fileID: 4789766005970589893, guid: 00005c09b7fdb8f41b6f691fe48c1a32, type: 3}

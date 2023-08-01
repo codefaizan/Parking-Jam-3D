@@ -14,10 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environments:
   - {fileID: 1826136473498510, guid: 35decfa9b89aef84da133de69b682bf3, type: 3}
-  - {fileID: 1609521691473774, guid: 1e2bce05f171bfc40afd102d418e5997, type: 3}
-  - {fileID: 1625545893286297, guid: 0b99d4bbbfb422b4a8efba705454fb9e, type: 3}
-  - {fileID: 1368334681936179, guid: 0d45880e752f93043ba8b3955d1a9722, type: 3}
-  - {fileID: 1566405475950692, guid: fcf837957c5fa8c45aa9f75af6c05208, type: 3}
   levelDetails:
   - levelPrefab: {fileID: 3478332667458335566, guid: 0fb7782f764311f48be56686f9ed5e43, type: 3}
     coinsReward: 50
